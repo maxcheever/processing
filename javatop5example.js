@@ -131,7 +131,7 @@ function arcLine(x, y, degrees, radius, w) {
 
 // Draw arc line with bars
 function arcLineBars(x, y, degrees, radius, w) {
-  beginShape(TESS);
+  beginShape(QUADS);
   for (let i = 0; i < degrees/4; i += 4) {  // degrees, but in steps of 4
     let angle = radians(i);
     vertex(x + cos(angle) * radius,
@@ -151,7 +151,7 @@ function arcLineBars(x, y, degrees, radius, w) {
 
 // Draw solid arc
 function arc(x, y, degrees, radius, w) {
-  beginShape(TESS);
+  beginShape(QUAD_STRIP);
   for (let i = 0; i < degrees; i++) {
     let angle = radians(i);
     vertex(x + cos(angle) * radius,
@@ -161,3 +161,4 @@ function arc(x, y, degrees, radius, w) {
   }
   endShape();
 }
+
